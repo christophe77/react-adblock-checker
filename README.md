@@ -19,4 +19,13 @@ Get the adblocker status like this :
     const { isAdBlockActive } = useAdBlockChecker();
 
 isAdBlockActive is a boolean giving you the adblocker status.
-It can be used for exemple inside a useEffect hook that show / hide a modal asking to disable the adblocker.
+No need to use a useEffect hook, the variable changes by itself.
+
+Example :
+
+    const Example = () => {
+        const { isAdBlockActive } = useAdBlockChecker()
+
+        return <h1>Adblocker enabled : {isAdBlockActive.toString()}</h1>
+    }
+    export default Example

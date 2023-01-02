@@ -11,7 +11,7 @@ const useAdBlockChecker = (): IUseAdBlockChecker => {
     const checkAdBlock: () => void = async () => {
       const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
       try {
-        await fetch(new Request(googleAdUrl)).catch((_) => setIsAdBlockActive(true))
+        await fetch(new Request(googleAdUrl)).catch(() => setIsAdBlockActive(true))
       } catch {
         setIsAdBlockActive(true)
       }
